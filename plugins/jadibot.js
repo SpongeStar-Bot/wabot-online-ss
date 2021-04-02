@@ -51,8 +51,8 @@ handler.help = ['jadibot']
 handler.tags = ['premium']
 handler.command = /^jadibots$/i
 handler.owner = false
-handler.mods = true
-handler.premium = true
+handler.mods = false
+handler.premium = false
 handler.group = false
 handler.private = false
 

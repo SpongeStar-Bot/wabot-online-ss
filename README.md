@@ -9,5 +9,6 @@ SpongeStar WhatsApp Bot
 > pkg install ffmpeg -y
 > pkg install imagemagick -y
 > git clone https://github.com/SpongeStar-Bot/wabot-online-ss
-> cd wabot-aq > npm install
+> cd wabot-aq
+> npm install
 ``` 

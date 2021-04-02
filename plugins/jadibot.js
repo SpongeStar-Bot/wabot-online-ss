@@ -47,8 +47,8 @@ let handler  = async (m, { conn, args, usedPrefix, command }) => {
     global.conns.push(conn)
   } else throw 'Tidak bisa membuat bot didalam bot!\n\nhttps://wa.me/' + global.conn.user.jid.split`@`[0] + '?text=.jadibot'
 }
-handler.help = ['jadibot']
-handler.tags = ['premium']
+handler.help = ['jadibot','premium']
+handler.tags = ['owner']
 handler.command = /^jadibots$/i
 handler.owner = false
 handler.mods = false

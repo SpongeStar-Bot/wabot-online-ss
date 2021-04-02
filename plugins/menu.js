@@ -75,8 +75,7 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
 │
 │ Uptime: *%uptime*
 │ Database: %totalreg nomor
-│ Github:
-│ %github
+│ SpongeStar-Bot
 ╰────
 %readmore`
     let header = conn.menu.header || '╭─「 %category 」'

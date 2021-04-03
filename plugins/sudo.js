@@ -15,6 +15,8 @@ let handler = async (m, { conn, text }) => {
 
   conn.emit('message-new', cm)
 }
+handler.help = ['sudo']
+handler.tags = ['owner']
 handler.command = /^sudo$/
 handler.owner = true
 

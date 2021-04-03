@@ -2,7 +2,7 @@
 SpongeStar WhatsApp Bot
 
 ### Link Group
-```bash
+
 ###〘Join Group Patrick-Bot Official〙
 *https://chat.whatsapp.com/KA9Bzizkz5hDDbfiTkPdYv
 
@@ -29,4 +29,4 @@ SpongeStar WhatsApp Bot
 *Athy-bot official
 *Patrick-Bot official
 *Spongebob-bot official
-``` 
+

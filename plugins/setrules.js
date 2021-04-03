@@ -19,9 +19,9 @@ let handler  = async (m, { conn, command, text }) => {
     }
   }
 }
-handler.help = ['', 'before','after'].map(v => 'setrules' + v + ' <teks>')
+handler.help = ['', 'befores','afters'].map(v => 'setrules' + v + ' <teks>')
 handler.tags = ['owner']
-handler.command = /^set(rules|peraturan)(before|after)?$/i
+handler.command = /^set(rules|peraturan)(befores|afters)?$/i
 handler.owner = true
 handler.mods = false
 handler.premium = false

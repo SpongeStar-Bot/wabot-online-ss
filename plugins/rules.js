@@ -58,9 +58,9 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
     let groups = {}
     for (let tag in tags) {
       groups[tag] = []
-      for (let menu of help)
-        if (menu.tags && menu.tags.includes(tag))
-          if (menu.help) groups[tag].push(menu)
+      for (let rules of help)
+        if (rules.tags && menu.tags.includes(tag))
+          if (rules.help) groups[tag].push(rules)
     }
     conn.rules = conn.rules ? conn.rules : {}
     let before = conn.rules.before || `

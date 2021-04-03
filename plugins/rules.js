@@ -63,12 +63,12 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
           if (rules.help) groups[tag].push(rules)
     }
     conn.rules = conn.rules ? conn.rules : {}
-    let before = conn.rules.before || `
+    let before = conn.rules.befores || `
 ╭─「 ${conn.getName(conn.user.jid)} 」
 │ Hai, %name!
 ╰────
-    let after  = conn.rules.after  || (conn.user.jid == global.conn.user.jid ? '' : `Powered by https://wa.me/${global.conn.user.jid.split`@`[0]}`) + `\n*%npmname@^%version*\n\`\`\`\%npmdesc\`\`\``
-    let _text  = before + '\n'
+    let after  = conn.rules.afters  || (conn.user.jid == global.conn.user.jid ? '' : `Powered by https://wa.me/${global.conn.user.jid.split`@`[0]}`) + `\n*%npmname@^%version*\n\`\`\`\%npmdesc\`\`\``
+    let _text  = befores + '\n'
     for (let tag in groups) {
       _text += header.replace(/%category/g, tags[tag]) + '\n'
       for (let rules of groups[tag]) {
@@ -77,7 +77,7 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
       }
       _text += footer + '\n'
     }
-    _text += after
+    _text += afters
     text =  typeof conn.rules == 'string' ? conn.rules : typeof conn.rules == 'object' ? _text : ''
     let replace = {
       '%': '%',

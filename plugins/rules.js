@@ -67,7 +67,7 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
 }
 handler.help = ['rules','peraturan']
 handler.tags = ['rules']
-handler.command = /^('rules|peraturan')$/i
+handler.command = /^(rules|peraturan)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false

@@ -59,7 +59,7 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
     for (let tag in tags) {
       groups[tag] = []
       for (let rules of help)
-        if (rules.tags && menu.tags.includes(tag))
+        if (rules.tags && rules.tags.includes(tag))
           if (rules.help) groups[tag].push(rules)
     }
     conn.rules = conn.rules ? conn.rules : {}
@@ -67,13 +67,13 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
 ╭─「 ${conn.getName(conn.user.jid)} 」
 │ Hai, %name!
 ╰────
-    let after  = conn.menu.after  || (conn.user.jid == global.conn.user.jid ? '' : `Powered by https://wa.me/${global.conn.user.jid.split`@`[0]}`) + `\n*%npmname@^%version*\n\`\`\`\%npmdesc\`\`\``
+    let after  = conn.rules.after  || (conn.user.jid == global.conn.user.jid ? '' : `Powered by https://wa.me/${global.conn.user.jid.split`@`[0]}`) + `\n*%npmname@^%version*\n\`\`\`\%npmdesc\`\`\``
     let _text  = before + '\n'
     for (let tag in groups) {
       _text += header.replace(/%category/g, tags[tag]) + '\n'
-      for (let menu of groups[tag]) {
-        for (let help of menu.help)
-          _text += body.replace(/%cmd/g, menu.prefix ? help : '%p' + help).replace(/%islimit/g, menu.limit ? ' (Limit)' : '')  + '\n'
+      for (let rules of groups[tag]) {
+        for (let help of rules.help)
+          _text += body.replace(/%cmd/g, rules.prefix ? help : '%p' + help).replace(/%islimit/g, rules.limit ? ' (Limit)' : '')  + '\n'
       }
       _text += footer + '\n'
     }

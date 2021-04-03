@@ -62,26 +62,11 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
         if (menu.tags && menu.tags.includes(tag))
           if (menu.help) groups[tag].push(menu)
     }
-    conn.menu = conn.menu ? conn.menu : {}
-    let before = conn.menu.before || `
+    conn.rules = conn.rules ? conn.rules : {}
+    let before = conn.rules.before || `
 ╭─「 ${conn.getName(conn.user.jid)} 」
 │ Hai, %name!
-│
-│ *%exp XP*
-│ Tersisa *%limit Limit*
-│
-│ Tanggal: *%week %weton, %date*
-│ Waktu: *%time*
-│
-│ Uptime: *%uptime*
-│ Database: %totalreg nomor
-│ Github:
-│ %github
 ╰────
-%readmore`
-    let header = conn.menu.header || '╭─「 %category 」'
-    let body   = conn.menu.body   || '│ • %cmd%islimit'
-    let footer = conn.menu.footer || '╰────\n'
     let after  = conn.menu.after  || (conn.user.jid == global.conn.user.jid ? '' : `Powered by https://wa.me/${global.conn.user.jid.split`@`[0]}`) + `\n*%npmname@^%version*\n\`\`\`\%npmdesc\`\`\``
     let _text  = before + '\n'
     for (let tag in groups) {
@@ -93,7 +78,7 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
       _text += footer + '\n'
     }
     _text += after
-    text =  typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ? _text : ''
+    text =  typeof conn.rules == 'string' ? conn.rules : typeof conn.rules == 'object' ? _text : ''
     let replace = {
       '%': '%',
       p: _p, uptime,

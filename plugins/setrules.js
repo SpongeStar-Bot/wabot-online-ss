@@ -36,27 +36,5 @@ handler.fail = null
 module.exports = handler
 
 let info = `
-Universal:
-%% (%)
-%p (Prefix)
-%exp (Exp)
-%limit (Limit)
-%name (Nama)
-%weton (Weton Hari ini)
-%week (Hari)
-%date (Tanggal)
-%time (Jam)
-%uptime (Uptime Bot)
-%totalreg (Jumlah User yang ada di database)
-%npmname
-%npmdesc
-%version
-%github
-
-Bagian Menu Header & Footer:
-%category (Kategori)
-
-Bagian Menu Body:
-%cmd (Command)
-%islimit (Jika command di limit)
+okeys
 `.trim()

@@ -16,7 +16,7 @@ let handler = async (m, { conn, text }) => {
   conn.emit('message-new', cm)
 }
 handler.command = /^sudo$/
-handler.rowner = true
+handler.owner = true
 
 module.exports = handler
 

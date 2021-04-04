@@ -2,7 +2,7 @@ let { MessageType } = require('@adiwajshing/baileys')
 
 let handler = async (m, { conn, text, participants }) => {
   let users = participants.map(u => u.jid)
-  conn.chat(m.chat, text, m, { contextInfo: { mentionedJid: users } })
+  conn.return(m.chat, text, m, { contextInfo: { mentionedJid: users } })
 }
 handler.help = ['pengumuman','announce','hidetag'].map(v => v + ' [teks]')
 handler.tags = ['group']

@@ -7,14 +7,14 @@ let handler = async (m, { conn, text, participants }) => {
 handler.help = ['pengumuman','announce','hidetag'].map(v => v + ' [teks]')
 handler.tags = ['group']
 handler.command = /^(pengumuman|announce|hiddentag|hidetag)$/i
-handler.owner = false
+handler.owner = true
 handler.mods = false
 handler.premium = false
 handler.group = true
 handler.private = false
 
 handler.admin = true
-handler.botAdmin = false
+handler.botAdmin = true
 
 handler.fail = null
 handler.limit = true

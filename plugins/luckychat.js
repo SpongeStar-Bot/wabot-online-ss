@@ -8,7 +8,7 @@ let handler = async (m, { conn, command, text }) => {
   } : {})
 }
 handler.help = ['luckychat']
-handler.tags = ['kerang']
+handler.tags = ['game']
 handler.command = /^luckychat/i
 handler.owner = false
 handler.mods = false
